@@ -4,7 +4,7 @@ import { LayoutWithTaskList } from "./pages/LayoutWithTaskList";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="t1-dz1-todolist">
       <Routes>
         <Route path="/" element={<LayoutWithTaskList />}>
           <Route path="/task/:id/edit" element={<TaskDetails mode="edit" />} />
