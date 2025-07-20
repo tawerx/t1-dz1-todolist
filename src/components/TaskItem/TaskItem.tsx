@@ -40,48 +40,52 @@ const TaskItem: React.FC<Props> = ({
             <div className={styles.taskItemBodyDescription}>
               <span>{description}</span>
             </div>
+            <div className={styles.taskItemBodyBottom}>
+              <div className={styles[category.replace(" ", "")]}>
+                {category}
+              </div>
+              <div className={styles[status.replace(" ", "")]}>{status}</div>
+              <div className={styles[priority.replace(" ", "")]}>
+                {priority}
+              </div>
+            </div>
           </div>
-          <div className={styles.taskItemBodyRigthside}>
-            <div className={styles.taskItemBodyCategory}>{category}</div>
-            <div className={styles.taskItemBodyStatus}>{status}</div>
-            <div className={styles.taskItemBodyPriority}>{priority}</div>
-          </div>
-        </div>
-        <div className={styles.taskItemControls}>
-          {status != "Done" && (
+          <div className={styles.taskItemControls}>
+            {status != "Done" && (
+              <Button
+                variant="outlined"
+                color="success"
+                startIcon={<CheckIcon />}
+                onClick={() =>
+                  updateTask({
+                    id,
+                    title,
+                    description,
+                    category,
+                    status: "Done",
+                    priority,
+                  })
+                }
+              ></Button>
+            )}
+            {status != "Done" && (
+              <Button
+                variant="outlined"
+                startIcon={<EditIcon />}
+                onClick={() =>
+                  navigate(`/task/${id}/edit`, {
+                    state: { background: location },
+                  })
+                }
+              ></Button>
+            )}
             <Button
               variant="outlined"
-              color="success"
-              startIcon={<CheckIcon />}
-              onClick={() =>
-                updateTask({
-                  id,
-                  title,
-                  description,
-                  category,
-                  status: "Done",
-                  priority,
-                })
-              }
+              color="error"
+              startIcon={<CloseIcon />}
+              onClick={() => deleteTask(id)}
             ></Button>
-          )}
-          {status != "Done" && (
-            <Button
-              variant="outlined"
-              startIcon={<EditIcon />}
-              onClick={() =>
-                navigate(`/task/${id}/edit`, {
-                  state: { background: location },
-                })
-              }
-            ></Button>
-          )}
-          <Button
-            variant="outlined"
-            color="error"
-            startIcon={<CloseIcon />}
-            onClick={() => deleteTask(id)}
-          ></Button>
+          </div>
         </div>
       </div>
     </>

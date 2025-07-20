@@ -70,21 +70,24 @@ const TaskList = () => {
         }}
       >
         <div className={styles.taskListTop}>
-          <div className={styles.taskListTopLeftside}>
-            <Button variant="contained" onClick={() => navigate("/task/new")}>
-              Добавить задачу
-            </Button>
-          </div>
-          <div className={styles.taskListTopRigthside}>
-            <Filters
-              category={category}
-              priority={priority}
-              status={status}
-              changeCat={handleCategoryChange}
-              changeStatus={handleStatusChange}
-              changePriority={handlePriorityChange}
-            />
-          </div>
+          <Button
+            variant="outlined"
+            sx={{
+              width: { xs: "80vw", md: "20vw", lg: "15vw" },
+              height: "56px",
+            }}
+            onClick={() => navigate("/task/new")}
+          >
+            Добавить задачу
+          </Button>
+          <Filters
+            category={category}
+            priority={priority}
+            status={status}
+            changeCat={handleCategoryChange}
+            changeStatus={handleStatusChange}
+            changePriority={handlePriorityChange}
+          />
         </div>
         <div className={styles.taskList}>
           {sortedTasks.map(
