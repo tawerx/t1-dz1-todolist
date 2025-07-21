@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { TaskDetails } from "./pages/TaskDetails";
 import { LayoutWithTaskList } from "./pages/LayoutWithTaskList";
 import { TaskInfo } from "./pages/TaskInfo";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<LayoutWithTaskList />}>
           <Route path="/task/:id/edit" element={<TaskDetails mode="edit" />} />
@@ -13,7 +13,7 @@ const App = () => {
         </Route>
         <Route path="/task/:id" element={<TaskInfo />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
