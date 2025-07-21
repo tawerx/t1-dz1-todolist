@@ -1,5 +1,4 @@
 import { Box, Button, Container, CssBaseline } from "@mui/material";
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTasks } from "../../context/TaskContext";
 import styles from "./TaskInfo.module.css";
