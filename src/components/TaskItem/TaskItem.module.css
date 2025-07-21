@@ -37,6 +37,14 @@
   font-size: 1rem;
   font-weight: bold;
 }
+
+.taskItemBodyDescription {
+  width: 230px;
+  white-space: nowrap; /* не переносить строки */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .taskItemBodyDescription span {
   font-size: 0.9rem;
 }

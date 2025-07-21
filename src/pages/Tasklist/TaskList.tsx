@@ -73,7 +73,7 @@ const TaskList = () => {
           <Button
             variant="outlined"
             sx={{
-              width: { xs: "80vw", md: "20vw", lg: "15vw" },
+              width: { xs: "80vw", md: "20vw", lg: "15vw", xl: "13vw" },
               height: "56px",
             }}
             onClick={() => navigate("/task/new")}

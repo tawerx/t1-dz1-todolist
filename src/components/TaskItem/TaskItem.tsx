@@ -33,7 +33,10 @@ const TaskItem: React.FC<Props> = ({
     <>
       <div className={styles.taskItem}>
         <div className={styles.taskItemBody}>
-          <div className={styles.taskItemBodyLeftside}>
+          <div
+            className={styles.taskItemBodyLeftside}
+            onClick={() => navigate(`/task/${id}`)}
+          >
             <div className={styles.taskItemBodyTitle}>
               <span>{title}</span>
             </div>

@@ -43,13 +43,13 @@ const Filters: React.FC<Props> = ({
         <Box
           sx={{
             position: "relative",
-            width: { xs: "24vw", md: "19vw", lg: "10vw" },
+            width: { xs: "24vw", md: "19vw", lg: "10vw", xl: "9vw" },
           }}
         >
           <FormControl
             fullWidth
             margin="dense"
-            sx={{ width: { xs: "24vw", md: "19vw", lg: "10vw" } }}
+            sx={{ width: { xs: "24vw", md: "19vw", lg: "10vw", xl: "9vw" } }}
           >
             <InputLabel id="category-label">Категория</InputLabel>
             <Select
@@ -91,13 +91,13 @@ const Filters: React.FC<Props> = ({
         <Box
           sx={{
             position: "relative",
-            width: { xs: "24vw", md: "19vw", lg: "10vw" },
+            width: { xs: "24vw", md: "19vw", lg: "10vw", xl: "9vw" },
           }}
         >
           <FormControl
             fullWidth
             margin="dense"
-            sx={{ width: { xs: "24vw", md: "19vw", lg: "10vw" } }}
+            sx={{ width: { xs: "24vw", md: "19vw", lg: "10vw", xl: "9vw" } }}
           >
             <InputLabel id="status-label">Статус</InputLabel>
             <Select
@@ -138,13 +138,13 @@ const Filters: React.FC<Props> = ({
         <Box
           sx={{
             position: "relative",
-            width: { xs: "24vw", md: "19vw", lg: "10vw" },
+            width: { xs: "24vw", md: "19vw", lg: "10vw", xl: "9vw" },
           }}
         >
           <FormControl
             fullWidth
             margin="dense"
-            sx={{ width: { xs: "24vw", md: "19vw", lg: "10vw" } }}
+            sx={{ width: { xs: "24vw", md: "19vw", lg: "10vw", xl: "9vw" } }}
           >
             <InputLabel id="priority-label">Приоритет</InputLabel>
             <Select

@@ -13,6 +13,11 @@ import { Box } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTasks } from "../../context/TaskContext";
 import type { Task } from "../../types";
+import {
+  getCategoryColor,
+  getPriorityColor,
+  getStatusColor,
+} from "../../utils";
 
 interface Props {
   mode: "edit" | "new";
@@ -100,6 +105,7 @@ export default function FormDialog({ mode }: Props) {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
+                gap: "5px",
               }}
             >
               <FormControl fullWidth margin="dense">
@@ -113,6 +119,7 @@ export default function FormDialog({ mode }: Props) {
                     setFormData({ ...formData, category: e.target.value })
                   }
                   label="Категория"
+                  sx={{ backgroundColor: getCategoryColor(formData.category) }}
                 >
                   <MenuItem value="Bug">Bug</MenuItem>
                   <MenuItem value="Feature">Feature</MenuItem>
@@ -133,6 +140,7 @@ export default function FormDialog({ mode }: Props) {
                     setFormData({ ...formData, status: e.target.value })
                   }
                   label="Статус"
+                  sx={{ backgroundColor: getStatusColor(formData.status) }}
                 >
                   <MenuItem value="To Do">To Do</MenuItem>
                   <MenuItem value="In Progress">In Progress</MenuItem>
@@ -151,6 +159,7 @@ export default function FormDialog({ mode }: Props) {
                     setFormData({ ...formData, priority: e.target.value })
                   }
                   label="Приоритет"
+                  sx={{ backgroundColor: getPriorityColor(formData.priority) }}
                 >
                   <MenuItem value="Low">Low</MenuItem>
                   <MenuItem value="Medium">Medium</MenuItem>
